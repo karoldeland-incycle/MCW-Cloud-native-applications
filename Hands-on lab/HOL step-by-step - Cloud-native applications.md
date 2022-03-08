@@ -359,7 +359,6 @@ This task will deploy the API application to the Azure Kubernetes Service cluste
       labels:
           app: api
       name: api
-      namespace: ingress-demo
     spec:
       replicas: 1
       selector:
