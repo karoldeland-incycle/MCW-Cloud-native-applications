@@ -377,12 +377,6 @@ This task will deploy the API application to the Azure Kubernetes Service cluste
         spec:
           containers:
           - image: [LOGINSERVER].azurecr.io/content-api
-            env:
-              - name: MONGODB_CONNECTION
-                valueFrom:
-                  secretKeyRef:
-                    name: cosmosdb
-                    key: db
             name: api
             imagePullPolicy: Always
             livenessProbe:
@@ -590,7 +584,6 @@ In this task, deploy the web service using `kubectl`.
       labels:
         app: web
       name: web
-      namespace: ingress-demo
     spec:
       replicas: 1
       selector:
